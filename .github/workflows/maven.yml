@@ -184,7 +184,7 @@ jobs:
   #############################################################################
 
   collect_webpages:
-    if: ${{ github.ref == 'refs/heads/development' }}
+    # if: ${{ github.ref == 'refs/heads/development' }}
     needs: [ build, generate_documentation ]
     runs-on: ubuntu-latest
     steps:
@@ -205,7 +205,7 @@ jobs:
           path: pages/
 
   deploy_web_pages:
-    if: ${{ github.ref == 'refs/heads/development' }}
+    # if: ${{ github.ref == 'refs/heads/development' }}
     needs: collect_webpages
     permissions:
       pages: write
